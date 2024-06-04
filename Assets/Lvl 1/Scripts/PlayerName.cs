@@ -13,6 +13,6 @@ public class PlayerName : GameCTRL
         PlayerPrefs.SetString("Username", nameOfPlayer);
 
         // Imprime el nombre en la consola
-        Debug.Log("Nombre de usuario guardado: " + nameOfPlayer);
+        //Debug.Log("Nombre de usuario guardado: " + nameOfPlayer);
     }
 }

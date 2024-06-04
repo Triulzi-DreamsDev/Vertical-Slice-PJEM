@@ -3,7 +3,22 @@ guid: c3fce9ce8436b7a42ad1a1223b6c9fd1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Clothe_BaseColor.1001
+    second: {fileID: 2800000, guid: 9ae60e9b55f83d64d9713d729a5ae1df, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Female_BaseColor.1001
+    second: {fileID: 2800000, guid: ee9fcf62964c66441b3e94e9ac51cb17, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hair_BaseColor.1001
+    second: {fileID: 2800000, guid: 14912b83a705d1f4aa1c56eb089266bf, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

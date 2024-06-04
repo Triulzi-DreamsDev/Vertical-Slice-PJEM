@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     Animator animator;
 
-
     private void Start()
     {
         animator.SetBool("idle", true);
@@ -22,24 +21,27 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (DialogueManager.GetInstance().dialogueIsPlaying) {
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
             animator.SetBool("idle", false);
             animator.SetBool("talking", true);
             animator.SetBool("walking", false);
-            return; }
+            return;
+        }
         GatherInput();
         Look();
         HandleAnimations();
-
     }
 
     private void FixedUpdate()
     {
-        if (DialogueManager.GetInstance().dialogueIsPlaying) {
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
             animator.SetBool("idle", false);
             animator.SetBool("talking", true);
             animator.SetBool("walking", false);
-            return; }
+            return;
+        }
         Move();
     }
 
@@ -59,7 +61,6 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         _rb.MovePosition(transform.position + transform.forward * _input.normalized.magnitude * _speed * Time.deltaTime);
-
     }
 
     private void HandleAnimations()
@@ -77,9 +78,4 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("talking", false);
         }
     }
-
-
 }
-
-
-

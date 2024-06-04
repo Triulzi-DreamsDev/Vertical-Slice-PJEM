@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -10,12 +9,6 @@ public class DialogueTrigger : MonoBehaviour
 
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
-
-    [SerializeField]
-    string NameOfTalker;
-
-    [SerializeField]
-    TextMeshProUGUI textTalker;
 
     private bool playerInRange;
 
@@ -29,9 +22,8 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
-            textTalker.text = NameOfTalker;
             visualCue.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.A)) //Press A to talk
+            if (Input.GetKeyDown(KeyCode.A))
             {
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
             }
@@ -41,6 +33,7 @@ public class DialogueTrigger : MonoBehaviour
             visualCue.SetActive(false);
         }
     }
+
 
     private void OnTriggerEnter(Collider collider)
     {

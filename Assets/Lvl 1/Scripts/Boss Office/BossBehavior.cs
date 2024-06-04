@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class BossBehavior : MonoBehaviour
+public class BossBehavior : GameCTRL
 {
     [SerializeField]
     public bool officeQuest;
@@ -12,9 +12,6 @@ public class BossBehavior : MonoBehaviour
     bool goBackOffice;
 
     int steps;
-
-    [SerializeField]
-    DialogueTriggerChoices dialogueTriggerChoices;
 
     NavMeshAgent agent;
     Transform player;
@@ -62,7 +59,7 @@ public class BossBehavior : MonoBehaviour
             }
             
         }
-        if (Input.GetKeyDown(KeyCode.I))
+        if (questState == 1) 
         {
             goBackOffice = true;
         }

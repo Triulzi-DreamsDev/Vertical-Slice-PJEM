@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerMsg : MonoBehaviour
+public class TriggerMsg : GameCTRL
 {
     [SerializeField]
     GameObject mensajeUI, respuesta;
@@ -39,7 +39,7 @@ public class TriggerMsg : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player" && questState == 1)
         {
             mensajeUI.SetActive(true);
         }

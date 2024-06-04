@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class GameCTRL : MonoBehaviour
 {
-    public static string nameOfPlayer;
+    public static string nameOfPlayer = "Mari Dalia";
     public static int questState;
 
     // Start is called before the first frame update
     void Start()
     {
-        nameOfPlayer = "Mari Dalia";
         questState = 0;
     }
 

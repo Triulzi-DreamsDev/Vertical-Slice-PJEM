@@ -22,6 +22,7 @@ public class BossBehavior : GameCTRL
     [SerializeField]
     Animator animator;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,12 +67,15 @@ public class BossBehavior : GameCTRL
         if (goBackOffice)
         {
             steps = 1;
+           
+
+            //agent.SetDestination(new Vector3(9.54f, 2.63f, 2.76f));
 
             transform.LookAt(new Vector3(25f, 3.5f, 2.65f));
             if (Vector3.Distance(transform.position, new Vector3(25f, 3.7f, 2.65f)) >= .5)
             {
                transform.position += transform.forward * 2f * Time.deltaTime;
-                //agent.SetDestination(new Vector3(25f, 3.5f, 2.65f));
+               
 
                 animator.SetBool("idle", false);
                 animator.SetBool("walking", true);
@@ -81,11 +85,9 @@ public class BossBehavior : GameCTRL
             }
         }
 
-        //if (DialogueManager.GetInstance().dialogueIsPlaying)
-        //{
-           
-        //}
     }
+
+    
 
     void ApproachPlayer()
     {

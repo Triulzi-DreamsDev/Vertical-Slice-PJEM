@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc0714a7efd4fc4088d14abf656ce14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraM: {fileID: 963194225}
 --- !u!114 &52486698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,73 +733,6 @@ RectTransform:
   m_AnchoredPosition: {x: 690, y: 432.72437}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &267210742
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 267210744}
-  - component: {fileID: 267210743}
-  - component: {fileID: 267210745}
-  m_Layer: 0
-  m_Name: TriggerBoss
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &267210743
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267210742}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 10.09}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &267210744
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267210742}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.03, y: 2.04, z: 2.19}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &267210745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267210742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 514cbfcef13a16342b95a4f90df5aae0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  behavior: {fileID: 898654396}
 --- !u!1 &279051042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,6 +1086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc0714a7efd4fc4088d14abf656ce14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraM: {fileID: 963194225}
 --- !u!1 &411457571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,7 +1169,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1540811084}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TriggerMsg, Assembly-CSharp
         m_MethodName: Ignorar
         m_Mode: 1
@@ -1469,7 +1404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &502685752
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1575,8 +1510,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322e00d911d9a144d92396a7cf352a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typingSpeed: 0.04
+  loadGlobalsJSON: {fileID: 4900000, guid: 06b34f1864af1e9448f72adb231c22d7, type: 3}
   dialoguePanel: {fileID: 502685751}
   dialogueText: {fileID: 1301526988}
+  displayNameText: {fileID: 1788112941}
   choices:
   - {fileID: 1664531952}
   - {fileID: 2108899169}
@@ -2066,7 +2004,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   officeQuest: 0
   goBackOffice: 0
-  dialogueTriggerChoices: {fileID: 0}
   distanciaDelPlayer: 2
   animator: {fileID: 9085729716149948404}
 --- !u!4 &898654397
@@ -2805,72 +2742,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116532467}
   m_CullTransparentMesh: 1
---- !u!1 &1119617318
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1119617320}
-  - component: {fileID: 1119617319}
-  - component: {fileID: 1119617321}
-  m_Layer: 0
-  m_Name: DisappearBoss
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &1119617319
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119617318}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 10.09}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &1119617320
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119617318}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.69, y: 2.99, z: 2.19}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1119617321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119617318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72de813743c6dd248a46d4e62a54cfb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1214715527
 GameObject:
   m_ObjectHideFlags: 0
@@ -3527,7 +3398,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1540811084}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TriggerMsg, Assembly-CSharp
         m_MethodName: Enviar
         m_Mode: 1
@@ -3680,74 +3551,6 @@ Transform:
   - {fileID: 55936268}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1540811081
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1540811083}
-  - component: {fileID: 1540811082}
-  - component: {fileID: 1540811084}
-  m_Layer: 0
-  m_Name: TriggerMessage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &1540811082
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540811081}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 10.09}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &1540811083
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540811081}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.9, y: 1.67, z: 2.19}
-  m_LocalScale: {x: 1, y: 0.15147, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1540811084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540811081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a173433c53ba6c648a0a4eadf57e3ba7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mensajeUI: {fileID: 1330312263}
-  respuesta: {fileID: 1042981911}
 --- !u!1 &1627676103
 GameObject:
   m_ObjectHideFlags: 0
@@ -4338,7 +4141,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1540811084}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TriggerMsg, Assembly-CSharp
         m_MethodName: Contestar
         m_Mode: 1
@@ -96179,8 +95982,5 @@ SceneRoots:
   - {fileID: 898654397}
   - {fileID: 1093381320}
   - {fileID: 457717184}
-  - {fileID: 267210744}
-  - {fileID: 1540811083}
-  - {fileID: 1119617320}
   - {fileID: 985884075}
   - {fileID: 94936352}

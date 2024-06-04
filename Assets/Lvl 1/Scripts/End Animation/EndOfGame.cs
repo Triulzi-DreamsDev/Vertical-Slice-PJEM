@@ -21,7 +21,6 @@ public class EndOfGame : GameCTRL
     void Start()
     {
         ErizoAn = Erizo.GetComponent<Animator>();
-        TrofeoAn = Trofeo.GetComponent<Animator>();
 
         Background.SetActive(false);
         EstrellaDerecha.SetActive(false);
@@ -71,9 +70,7 @@ public class EndOfGame : GameCTRL
         yield return new WaitForSeconds(2);
 
         Trofeo.SetActive(true);
-        yield return new WaitForSeconds(2);
-
-        TrofeoAn.SetBool("idle", true);
+        yield return new WaitForSeconds(2);;
     }
 
     public void BtnMenu()

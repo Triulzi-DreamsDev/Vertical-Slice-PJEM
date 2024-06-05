@@ -94,7 +94,7 @@ public class DialogueManager : GameCTRL
         // NOTE: The 'currentStory.currentChoiecs.Count == 0' part was to fix a bug after the Youtube video was made
         if (canContinueToNextLine
             && currentStory.currentChoices.Count == 0
-            && Input.GetKeyDown(KeyCode.Space))
+            && Input.GetKeyDown(KeyCode.Return))
         {
             ContinueStory();
         }

@@ -10,6 +10,10 @@ public class PlayerController : GameCTRL
     private Vector3 _input;
 
     [SerializeField]
+    Animator maleAnimator;
+    [SerializeField]
+    Animator femaleAnimator;
+
     Animator animator;
 
     [SerializeField]
@@ -17,6 +21,15 @@ public class PlayerController : GameCTRL
 
     private void Start()
     {
+        if (esHombre)
+        {
+            animator = maleAnimator;
+        }
+        if (!esHombre)
+        {
+            animator = femaleAnimator;
+        }
+        
         animator.SetBool("idle", true);
         animator.SetBool("walking", false);
         animator.SetBool("talking", false);

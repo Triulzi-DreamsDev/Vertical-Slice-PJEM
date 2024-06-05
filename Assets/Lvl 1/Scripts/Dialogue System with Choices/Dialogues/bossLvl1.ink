@@ -1,4 +1,4 @@
-VAR playerName = "Geraldine"
+VAR playerName = ""
 -> start
 
 === start ===

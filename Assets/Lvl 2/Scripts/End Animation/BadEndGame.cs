@@ -23,7 +23,7 @@ public class BadEndGame : GameCTRL
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (questState == 5)
         {
             StartCoroutine(PlayBadSequence());
         }

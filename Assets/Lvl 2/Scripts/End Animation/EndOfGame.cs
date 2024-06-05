@@ -34,22 +34,22 @@ public class EndOfGame : GameCTRL
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && !yaFue)
-        {
-            FinDelJuego();
-        }
+        //if (Input.GetKeyDown(KeyCode.Q) && !yaFue)
+        //{
+        //    FinDelJuego();
+        //}
 
-        if (GameCTRL.questState == 2 && !yaFue)
+        if (GameCTRL.questState == 3 && !yaFue)
         {
             yaFue = true;
             StartCoroutine(PlayEndSequence());
         }
     }
 
-    public void FinDelJuego()
-    {
-        GameCTRL.questState = 2;
-    }
+    //public void FinDelJuego()
+    //{
+    //    GameCTRL.questState = 2;
+    //}
 
     IEnumerator PlayEndSequence()
     {
@@ -72,7 +72,7 @@ public class EndOfGame : GameCTRL
 
     public void BtnMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
 

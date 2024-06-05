@@ -16,13 +16,13 @@ public class BossBehavior : GameCTRL
     NavMeshAgent agent;
     Transform player;
 
+    public bool cajon;
+
     [SerializeField]
     float distanciaDelPlayer = 5f;
 
     [SerializeField]
     Animator animator;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +31,9 @@ public class BossBehavior : GameCTRL
         goBackOffice = false;
         steps = 0;
         animator.SetBool("idle", true);
-        
+        cajon = false;
+
+
     }
 
     // Update is called once per frame
@@ -39,7 +41,7 @@ public class BossBehavior : GameCTRL
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         
-        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        if (DialogueManager.GetInstance().dialogueIsPlaying && (questState==0 || questState==1))
         {
             transform.LookAt(player);
             animator.SetBool("idle", false);
@@ -85,6 +87,33 @@ public class BossBehavior : GameCTRL
             }
         }
 
+        if (questState == 2 && cajon == false)
+        {
+
+            transform.LookAt(new Vector3(-5f, 1.6f, 5.38f));
+            if (Vector3.Distance(transform.position, new Vector3(-5.09f, 1.53f, 5.5f)) >= .2)
+            {
+                transform.position += transform.forward * 2f * Time.deltaTime;
+               
+                animator.SetBool("idle", false);
+                animator.SetBool("walking", true);
+                animator.SetBool("angry", false);
+                animator.SetBool("pointing", false);
+                animator.SetBool("talking", false);
+            }
+
+          
+        }
+        if (cajon)
+        {
+            transform.LookAt(player);
+            animator.SetBool("idle", false);
+            animator.SetBool("walking", false);
+            animator.SetBool("angry", false);
+            animator.SetBool("pointing", false);
+            animator.SetBool("talking", true);
+        }
+
     }
 
     
@@ -106,5 +135,7 @@ public class BossBehavior : GameCTRL
         }
 
     }
+
+    
 
 }

@@ -80,8 +80,14 @@ public class DialogueManager : GameCTRL
     {
         // return right away if dialogue isn't playing
         if (!dialogueIsPlaying)
-        {
+        {     
             return;
+        }
+
+        if (questState==3 ||questState == 5)
+        {
+            ExitDialogueMode();
+            dialoguePanel.SetActive(false);
         }
 
         // handle continuing to the next line in the dialogue when submit is pressed

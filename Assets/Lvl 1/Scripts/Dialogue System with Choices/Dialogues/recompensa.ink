@@ -6,4 +6,5 @@
  De acuerdo, vamos a revisar ese cajón juntos. #speaker:CEO HERO ENTERPRISE #trigger:2
   Aquí está. No puedo creerlo. Has hecho un excelente trabajo manejando esto con diplomacia y determinación.
   Gracias, jefe. Es un gran alivio encontrarlo. Ahora puedo continuar con mi trabajo y asegurarme de que todo se resuelva correctamente. #speaker:{playerName}
-  Has demostrado tu valía como servidor público. Estoy orgulloso de tu compromiso y profesionalismo. #speaker:CEO HERO ENTERPRISE #trigger:3
+  Has demostrado tu valía como servidor público. Estoy orgulloso de tu compromiso y profesionalismo. #speaker:CEO HERO ENTERPRISE 
+  #trigger:3

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueTrigger : MonoBehaviour
+public class DialogueTrigger : GameCTRL
 {
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
@@ -29,6 +29,11 @@ public class DialogueTrigger : MonoBehaviour
             }
         }
         if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            visualCue.SetActive(false);
+        }
+
+        if (questState == 3 || questState == 5)
         {
             visualCue.SetActive(false);
         }

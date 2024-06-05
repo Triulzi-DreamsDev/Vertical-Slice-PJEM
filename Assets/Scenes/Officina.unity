@@ -747,8 +747,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Juan Perez
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1ae0e3c1f7a17b04eb8ca92e9c28acfb, type: 2}
-  m_sharedMaterial: {fileID: 120325639664895356, guid: 1ae0e3c1f7a17b04eb8ca92e9c28acfb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3161,8 +3161,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1ae0e3c1f7a17b04eb8ca92e9c28acfb, type: 2}
-  m_sharedMaterial: {fileID: 120325639664895356, guid: 1ae0e3c1f7a17b04eb8ca92e9c28acfb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9db8b63aac49930409c66a0ee2c00783, type: 2}
+  m_sharedMaterial: {fileID: 344457671416552296, guid: 9db8b63aac49930409c66a0ee2c00783, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

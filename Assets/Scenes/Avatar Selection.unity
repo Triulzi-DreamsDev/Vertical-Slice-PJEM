@@ -387,7 +387,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: a1ec1705f444eee4394ff57a6fc2dbf5, type: 2}
+  m_GlobalFontAsset: {fileID: 11400000, guid: 9db8b63aac49930409c66a0ee2c00783, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_RestoreOriginalTextOnEscape: 1
@@ -816,8 +816,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter text...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a1ec1705f444eee4394ff57a6fc2dbf5, type: 2}
-  m_sharedMaterial: {fileID: 107366858332646759, guid: a1ec1705f444eee4394ff57a6fc2dbf5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9db8b63aac49930409c66a0ee2c00783, type: 2}
+  m_sharedMaterial: {fileID: 344457671416552296, guid: 9db8b63aac49930409c66a0ee2c00783, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2757,8 +2757,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Tu Nombre\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a1ec1705f444eee4394ff57a6fc2dbf5, type: 2}
-  m_sharedMaterial: {fileID: 107366858332646759, guid: a1ec1705f444eee4394ff57a6fc2dbf5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9db8b63aac49930409c66a0ee2c00783, type: 2}
+  m_sharedMaterial: {fileID: 344457671416552296, guid: 9db8b63aac49930409c66a0ee2c00783, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

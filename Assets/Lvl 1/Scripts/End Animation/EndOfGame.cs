@@ -61,21 +61,19 @@ public class EndOfGame : GameCTRL
         yield return new WaitForSeconds(2);
 
         Background.SetActive(true);
+        EstrellaDerecha.SetActive(true);
         yield return new WaitForSeconds(1);
 
-        EstrellaDerecha.SetActive(true);
-        yield return new WaitForSeconds(2);
-
         EstrellaIzquierda.SetActive(true);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
 
         Trofeo.SetActive(true);
-        yield return new WaitForSeconds(2);;
     }
 
     public void BtnMenu()
     {
-        //SceneManager.LoadScene(0);
-        Debug.Log("SceneManager.LoadScene(0);");
+        SceneManager.LoadScene(1);
     }
+
+
 }

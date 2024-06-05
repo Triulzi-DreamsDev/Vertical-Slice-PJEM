@@ -34,7 +34,7 @@ public class BadEndGame : GameCTRL
 
         Fade.SetActive(true);
         BadCinematic.SetActive(true);
-        yield return new WaitForSeconds(15); // Espera unos segundos
+        yield return new WaitForSeconds(14); // Espera unos segundos
         SceneManager.LoadScene(1);
     }
 }

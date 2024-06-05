@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DisappearBoss : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class DisappearBoss : MonoBehaviour
         if (collider.gameObject.tag == "Boss")
         {
             Destroy(collider.gameObject);
+        }
+        if (collider.gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene("Officina");
         }
     }
 }

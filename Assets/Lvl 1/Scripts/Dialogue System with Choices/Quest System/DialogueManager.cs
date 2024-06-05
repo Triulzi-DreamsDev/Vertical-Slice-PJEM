@@ -80,15 +80,21 @@ public class DialogueManager : GameCTRL
     {
         // return right away if dialogue isn't playing
         if (!dialogueIsPlaying)
-        {
+        {     
             return;
+        }
+
+        if (questState==3 ||questState == 5)
+        {
+            ExitDialogueMode();
+            dialoguePanel.SetActive(false);
         }
 
         // handle continuing to the next line in the dialogue when submit is pressed
         // NOTE: The 'currentStory.currentChoiecs.Count == 0' part was to fix a bug after the Youtube video was made
         if (canContinueToNextLine
             && currentStory.currentChoices.Count == 0
-            && Input.GetKeyDown(KeyCode.Space))
+            && Input.GetKeyDown(KeyCode.Return))
         {
             ContinueStory();
         }

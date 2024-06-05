@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : GameCTRL
 {
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private float _speed = 5;
@@ -10,10 +10,26 @@ public class PlayerController : MonoBehaviour
     private Vector3 _input;
 
     [SerializeField]
+    Animator maleAnimator;
+    [SerializeField]
+    Animator femaleAnimator;
+
     Animator animator;
+
+    [SerializeField]
+    GameObject boss;
 
     private void Start()
     {
+        if (esHombre)
+        {
+            animator = maleAnimator;
+        }
+        if (!esHombre)
+        {
+            animator = femaleAnimator;
+        }
+        
         animator.SetBool("idle", true);
         animator.SetBool("walking", false);
         animator.SetBool("talking", false);
@@ -26,6 +42,10 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("idle", false);
             animator.SetBool("talking", true);
             animator.SetBool("walking", false);
+            if(questState == 2)
+            {
+                transform.LookAt(boss.transform);
+            }
             return;
         }
         GatherInput();

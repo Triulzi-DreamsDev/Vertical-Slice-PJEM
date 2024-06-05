@@ -87,7 +87,7 @@ public class BossBehavior : GameCTRL
             }
         }
 
-        if (questState == 2 && cajon == false)
+        if ((questState == 2 || questState ==4) && cajon == false)
         {
 
             transform.LookAt(new Vector3(-5f, 1.6f, 5.38f));

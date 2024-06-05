@@ -8,12 +8,17 @@ public class BadEndGame : GameCTRL
     [SerializeField] GameObject Fade;
     [SerializeField] GameObject BadCinematic;
 
+    [SerializeField] GameObject Boss;
+    [SerializeField] GameObject Player;
+    [SerializeField] Animator BossA;
+    [SerializeField] Animator PlayerA;
     // Start is called before the first frame update
     void Start()
     {
         Fade.SetActive(false);
         BadCinematic.SetActive(false);
-    }
+        BossA = Boss.GetComponent<Animator>();
+        PlayerA = Player.GetComponent<Animator>();    }
 
     // Update is called once per frame
     void Update()
@@ -26,6 +31,7 @@ public class BadEndGame : GameCTRL
 
     IEnumerator PlayBadSequence()
     {
+
         Fade.SetActive(true);
         BadCinematic.SetActive(true);
         yield return new WaitForSeconds(15); // Espera unos segundos

@@ -6907,6 +6907,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Fade: {fileID: 500653671}
   BadCinematic: {fileID: 1585495024}
+  Boss: {fileID: 8456968063049553225}
+  Player: {fileID: 1071170614483113678}
+  BossA: {fileID: 9085729716149948404}
+  PlayerA: {fileID: 1071170614483113679}
 --- !u!1 &830849888
 GameObject:
   m_ObjectHideFlags: 0
@@ -9323,7 +9327,7 @@ PlayableDirector:
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: -4377812468493947067, guid: 85003b59b53706049b9ef1b0e508ca2d, type: 2}
-    value: {fileID: 104832266}
+    value: {fileID: 1071170614483113679}
   - key: {fileID: -7386037027326339613, guid: 85003b59b53706049b9ef1b0e508ca2d, type: 2}
     value: {fileID: 1837919023}
   - key: {fileID: 6434831417933772364, guid: 85003b59b53706049b9ef1b0e508ca2d, type: 2}
@@ -9331,7 +9335,7 @@ PlayableDirector:
   - key: {fileID: -7843641408212181617, guid: 85003b59b53706049b9ef1b0e508ca2d, type: 2}
     value: {fileID: 898654398}
   - key: {fileID: 7341816010406522192, guid: 85003b59b53706049b9ef1b0e508ca2d, type: 2}
-    value: {fileID: 898654398}
+    value: {fileID: 9085729716149948404}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1627676103

@@ -14,7 +14,10 @@ public class BossBehavior : GameCTRL
     int steps;
 
     NavMeshAgent agent;
+
     Transform player;
+    [SerializeField]
+    Transform DestinationPuerta;
 
     public bool cajon;
 
@@ -28,7 +31,7 @@ public class BossBehavior : GameCTRL
     public bool centro;
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();   
+        agent = this.GetComponent<NavMeshAgent>();   
         officeQuest = false;
         goBackOffice = false;
         steps = 0;
@@ -45,7 +48,7 @@ public class BossBehavior : GameCTRL
         
         if (DialogueManager.GetInstance().dialogueIsPlaying && (questState==0 || questState==1))
         {
-            transform.LookAt(player);
+            //transform.LookAt(player);
             animator.SetBool("idle", false);
             animator.SetBool("walking", false);
             animator.SetBool("angry", false);
@@ -72,11 +75,11 @@ public class BossBehavior : GameCTRL
         {
             steps = 1;
 
-            transform.LookAt(new Vector3(9.54f, 2.63f, 2.76f));
-            if (Vector3.Distance(transform.position, new Vector3(9.54f, 2.63f, 2.76f)) >= .5 && centro == false)
+            /*if (Vector3.Distance(transform.position, new Vector3(9f, 3.7f, 1.12f)) >= .5 && centro == false)
             {
-                transform.LookAt(new Vector3(9.54f, 2.63f, 2.76f));
+                transform.LookAt(new Vector3(9f, 3.7f, 1.12f));
                 transform.position += transform.forward * 2f * Time.deltaTime;
+
 
 
                 animator.SetBool("idle", false);
@@ -85,17 +88,21 @@ public class BossBehavior : GameCTRL
                 animator.SetBool("pointing", false);
                 animator.SetBool("talking", false);
             } 
-            if (Vector3.Distance(transform.position, new Vector3(9.54f, 2.63f, 2.76f)) <= 2)
+            if (Vector3.Distance(transform.position, new Vector3(9f, 2f, 1.12f)) <= 2)
             {
                 centro = true;
             }
-
+            */
             
             if (Vector3.Distance(transform.position, new Vector3(25f, 3.7f, 2.65f)) >= .5)
             {
-                transform.LookAt(new Vector3(25f, 3.5f, 2.65f));
-                transform.position += transform.forward * 2f * Time.deltaTime;
-               
+                /*transform.LookAt(new Vector3(25f, 3.5f, 2.65f));
+                transform.position += transform.forward * 2f * Time.deltaTime;*/
+                Vector3 targetVector = DestinationPuerta.transform.position;
+                //transform.position += transform.forward * 2f * Time.deltaTime;
+                agent.SetDestination(targetVector);
+                transform.LookAt(targetVector);
+
 
                 animator.SetBool("idle", false);
                 animator.SetBool("walking", true);
@@ -138,12 +145,13 @@ public class BossBehavior : GameCTRL
 
     void ApproachPlayer()
     {
-        transform.LookAt(player);
 
         if (Vector3.Distance(transform.position, player.position) >= distanciaDelPlayer)
         {
-            transform.position += transform.forward * 2f * Time.deltaTime;
-           // agent.SetDestination(player.position);
+            Vector3 targetVector = player.transform.position;
+            //transform.position += transform.forward * 2f * Time.deltaTime;
+            agent.SetDestination(targetVector);
+            transform.LookAt(targetVector);
 
             animator.SetBool("idle", false);
             animator.SetBool("walking", true);

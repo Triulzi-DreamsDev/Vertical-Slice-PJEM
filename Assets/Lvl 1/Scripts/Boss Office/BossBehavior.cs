@@ -24,6 +24,8 @@ public class BossBehavior : GameCTRL
     [SerializeField]
     Animator animator;
     // Start is called before the first frame update
+
+    public bool centro;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();   
@@ -32,7 +34,7 @@ public class BossBehavior : GameCTRL
         steps = 0;
         animator.SetBool("idle", true);
         cajon = false;
-
+        centro = false;
 
     }
 
@@ -69,14 +71,30 @@ public class BossBehavior : GameCTRL
         if (goBackOffice)
         {
             steps = 1;
-           
 
-            //agent.SetDestination(new Vector3(9.54f, 2.63f, 2.76f));
+            transform.LookAt(new Vector3(9.54f, 2.63f, 2.76f));
+            if (Vector3.Distance(transform.position, new Vector3(9.54f, 2.63f, 2.76f)) >= .5 && centro == false)
+            {
+                transform.LookAt(new Vector3(9.54f, 2.63f, 2.76f));
+                transform.position += transform.forward * 2f * Time.deltaTime;
 
-            transform.LookAt(new Vector3(25f, 3.5f, 2.65f));
+
+                animator.SetBool("idle", false);
+                animator.SetBool("walking", true);
+                animator.SetBool("angry", false);
+                animator.SetBool("pointing", false);
+                animator.SetBool("talking", false);
+            } 
+            if (Vector3.Distance(transform.position, new Vector3(9.54f, 2.63f, 2.76f)) <= 2)
+            {
+                centro = true;
+            }
+
+            
             if (Vector3.Distance(transform.position, new Vector3(25f, 3.7f, 2.65f)) >= .5)
             {
-               transform.position += transform.forward * 2f * Time.deltaTime;
+                transform.LookAt(new Vector3(25f, 3.5f, 2.65f));
+                transform.position += transform.forward * 2f * Time.deltaTime;
                
 
                 animator.SetBool("idle", false);
@@ -96,7 +114,7 @@ public class BossBehavior : GameCTRL
                 transform.position += transform.forward * 2f * Time.deltaTime;
                
                 animator.SetBool("idle", false);
-                animator.SetBool("walking", true);
+                animator.SetBool("walking", true); 
                 animator.SetBool("angry", false);
                 animator.SetBool("pointing", false);
                 animator.SetBool("talking", false);

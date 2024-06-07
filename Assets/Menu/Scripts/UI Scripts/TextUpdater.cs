@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class TextUpdater : GameCTRL
 {
-    // Start is called before the first frame update
     // Referencia al componente TextMesh
     public TextMeshProUGUI textMesh;
 

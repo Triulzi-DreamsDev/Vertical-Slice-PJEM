@@ -1,3 +1,4 @@
+using Palmmedia.ReportGenerator.Core;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +27,9 @@ public class BossBehavior : GameCTRL
 
     [SerializeField]
     Animator animator;
+
+    Rigidbody rb;
+    Transform tr;
     // Start is called before the first frame update
 
     public bool centro;
@@ -38,7 +42,8 @@ public class BossBehavior : GameCTRL
         animator.SetBool("idle", true);
         cajon = false;
         centro = false;
-
+        rb = this.GetComponent<Rigidbody>();
+        tr = this.GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -145,7 +150,7 @@ public class BossBehavior : GameCTRL
 
     void ApproachPlayer()
     {
-
+        //var fwd1= Vector3.Dot(rb.velocity, tr.forward);
         if (Vector3.Distance(transform.position, player.position) >= distanciaDelPlayer)
         {
             Vector3 targetVector = player.transform.position;

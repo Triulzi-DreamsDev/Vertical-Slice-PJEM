@@ -16,6 +16,8 @@ public class BossBehavior : GameCTRL
     NavMeshAgent agent;
 
     Transform player;
+    [SerializeField]
+    Transform DestinationPuerta;
 
     public bool cajon;
 
@@ -73,10 +75,11 @@ public class BossBehavior : GameCTRL
         {
             steps = 1;
 
-            if (Vector3.Distance(transform.position, new Vector3(9f, 3.7f, 1.12f)) >= .5 && centro == false)
+            /*if (Vector3.Distance(transform.position, new Vector3(9f, 3.7f, 1.12f)) >= .5 && centro == false)
             {
                 transform.LookAt(new Vector3(9f, 3.7f, 1.12f));
                 transform.position += transform.forward * 2f * Time.deltaTime;
+
 
 
                 animator.SetBool("idle", false);
@@ -89,13 +92,17 @@ public class BossBehavior : GameCTRL
             {
                 centro = true;
             }
-
+            */
             
-            if (Vector3.Distance(transform.position, new Vector3(25f, 3.7f, 2.65f)) >= .5 && centro == true)
+            if (Vector3.Distance(transform.position, new Vector3(25f, 3.7f, 2.65f)) >= .5)
             {
-                transform.LookAt(new Vector3(25f, 3.5f, 2.65f));
-                transform.position += transform.forward * 2f * Time.deltaTime;
-               
+                /*transform.LookAt(new Vector3(25f, 3.5f, 2.65f));
+                transform.position += transform.forward * 2f * Time.deltaTime;*/
+                Vector3 targetVector = DestinationPuerta.transform.position;
+                //transform.position += transform.forward * 2f * Time.deltaTime;
+                agent.SetDestination(targetVector);
+                transform.LookAt(targetVector);
+
 
                 animator.SetBool("idle", false);
                 animator.SetBool("walking", true);

@@ -143,6 +143,7 @@ public class BossBehavior : GameCTRL
         }
         else if (Vector3.Distance(transform.position, player.position) <= distanciaDelPlayer)
         {
+            transform.LookAt(player);
             animator.SetBool("idle", true);
             animator.SetBool("walking", false);
             animator.SetBool("angry", false);

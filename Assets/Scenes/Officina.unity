@@ -1730,7 +1730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322e00d911d9a144d92396a7cf352a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typingSpeed: 0.04
+  typingSpeed: 0.03
   loadGlobalsJSON: {fileID: 4900000, guid: 06b34f1864af1e9448f72adb231c22d7, type: 3}
   dialoguePanel: {fileID: 502685751}
   dialogueText: {fileID: 1301526988}

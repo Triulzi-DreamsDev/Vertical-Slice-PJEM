@@ -10,7 +10,7 @@ using System;
 public class DialogueManager : GameCTRL
 {
     [Header("Params")]
-    [SerializeField] private float typingSpeed = 0.01f;
+    [SerializeField] private float typingSpeed = 0.03f;
 
     [Header("Load Globals JSON")]
     [SerializeField] private TextAsset loadGlobalsJSON;

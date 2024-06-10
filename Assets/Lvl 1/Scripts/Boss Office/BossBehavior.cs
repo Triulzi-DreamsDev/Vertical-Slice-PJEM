@@ -79,25 +79,6 @@ public class BossBehavior : GameCTRL
         if (goBackOffice)
         {
             steps = 1;
-
-            /*if (Vector3.Distance(transform.position, new Vector3(9f, 3.7f, 1.12f)) >= .5 && centro == false)
-            {
-                transform.LookAt(new Vector3(9f, 3.7f, 1.12f));
-                transform.position += transform.forward * 2f * Time.deltaTime;
-
-
-
-                animator.SetBool("idle", false);
-                animator.SetBool("walking", true);
-                animator.SetBool("angry", false);
-                animator.SetBool("pointing", false);
-                animator.SetBool("talking", false);
-            } 
-            if (Vector3.Distance(transform.position, new Vector3(9f, 2f, 1.12f)) <= 2)
-            {
-                centro = true;
-            }
-            */
             
             if (Vector3.Distance(transform.position, new Vector3(25f, 3.7f, 2.65f)) >= .5)
             {
@@ -151,7 +132,7 @@ public class BossBehavior : GameCTRL
     void ApproachPlayer()
     {
         //var fwd1= Vector3.Dot(rb.velocity, tr.forward);
-        if (Vector3.Distance(transform.position, player.position) >= distanciaDelPlayer)
+        if (Vector3.Distance(transform.position, player.position) > distanciaDelPlayer)
         {
             Vector3 targetVector = player.transform.position;
             //transform.position += transform.forward * 2f * Time.deltaTime;
@@ -160,6 +141,13 @@ public class BossBehavior : GameCTRL
 
             animator.SetBool("idle", false);
             animator.SetBool("walking", true);
+            animator.SetBool("angry", false);
+            animator.SetBool("pointing", false);
+            animator.SetBool("talking", false);
+        } else if (Vector3.Distance(transform.position, player.position) <= distanciaDelPlayer)
+        {
+            animator.SetBool("idle", true);
+            animator.SetBool("walking", false);
             animator.SetBool("angry", false);
             animator.SetBool("pointing", false);
             animator.SetBool("talking", false);

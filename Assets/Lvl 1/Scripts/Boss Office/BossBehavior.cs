@@ -99,8 +99,8 @@ public class BossBehavior : GameCTRL
 
         if ((questState == 2 || questState == 4) && cajon == false)
         {
-            transform.LookAt(new Vector3(-5f, 1.6f, 5.38f));
-            if (Vector3.Distance(transform.position, new Vector3(-5.09f, 1.53f, 5.5f)) >= .2)
+            transform.LookAt(new Vector3(-2.74f, 1.25f, 4.66f));
+            if (Vector3.Distance(transform.position, new Vector3(-2.74f, 1.25f, 4.66f)) >= 1.7)
             {
                 transform.position += transform.forward * 2f * Time.deltaTime;
 
@@ -109,6 +109,13 @@ public class BossBehavior : GameCTRL
                 animator.SetBool("angry", false);
                 animator.SetBool("pointing", false);
                 animator.SetBool("talking", false);
+            } else if (Vector3.Distance(transform.position, new Vector3(-2.74f, 1.25f, 4.66f)) < 2)
+            {
+                animator.SetBool("idle", false);
+                animator.SetBool("walking", false);
+                animator.SetBool("angry", false);
+                animator.SetBool("pointing", false);
+                animator.SetBool("talking", true);
             }
         }
 

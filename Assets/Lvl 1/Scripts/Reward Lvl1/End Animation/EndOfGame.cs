@@ -34,12 +34,22 @@ public class EndOfGame : GameCTRL
 
     void Update()
     {
+        //if (Input.GetKeyDown(KeyCode.Q) && !yaFue)
+        //{
+        //    FinDelJuego();
+        //}
+
         if (GameCTRL.questState == 3 && !yaFue)
         {
             yaFue = true;
             StartCoroutine(PlayEndSequence());
         }
     }
+
+    //public void FinDelJuego()
+    //{
+    //    GameCTRL.questState = 2;
+    //}
 
     IEnumerator PlayEndSequence()
     {

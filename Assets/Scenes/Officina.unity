@@ -132,8 +132,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 151253033}
+  - component: {fileID: 151253034}
   m_Layer: 0
-  m_Name: InputManager
+  m_Name: UIManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,6 +155,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 457717184}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &151253034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151253032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd5a9e666c71de45a6771372628edd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNameUI: {fileID: 181228906}
 --- !u!1 &160684444
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +345,7 @@ GameObject:
   - component: {fileID: 181228907}
   - component: {fileID: 181228906}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Text Player Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1611,7 +1611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322e00d911d9a144d92396a7cf352a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typingSpeed: 0.008
+  typingSpeed: 0.001
   loadGlobalsJSON: {fileID: 4900000, guid: 06b34f1864af1e9448f72adb231c22d7, type: 3}
   dialoguePanel: {fileID: 502685751}
   dialogueText: {fileID: 1301526988}
@@ -1839,6 +1839,7 @@ GameObject:
   - component: {fileID: 898654394}
   - component: {fileID: 898654393}
   - component: {fileID: 898654398}
+  - component: {fileID: 898654399}
   m_Layer: 0
   m_Name: Boss VF
   m_TagString: Boss
@@ -1893,7 +1894,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!136 &898654395
 CapsuleCollider:
@@ -1974,6 +1975,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &898654399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898654392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &941080207
 GameObject:
   m_ObjectHideFlags: 0
@@ -60871,7 +60891,7 @@ MonoBehaviour:
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_UseGeometry: 0
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1

@@ -20,6 +20,9 @@ public class BossBehavior : GameCTRL
     [SerializeField]
     Transform DestinationPuerta;
 
+    [SerializeField]
+    Transform DestnationCajon;
+
     public bool cajon;
 
     [SerializeField]
@@ -29,10 +32,6 @@ public class BossBehavior : GameCTRL
     Animator animator;
 
     Rigidbody rb;
-    Transform tr;
-    // Start is called before the first frame update
-
-    public bool centro;
     void Start()
     {
         agent = this.GetComponent<NavMeshAgent>();
@@ -41,12 +40,9 @@ public class BossBehavior : GameCTRL
         steps = 0;
         animator.SetBool("idle", true);
         cajon = false;
-        centro = false;
         rb = this.GetComponent<Rigidbody>();
-        tr = this.GetComponent<Transform>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -82,10 +78,7 @@ public class BossBehavior : GameCTRL
 
             if (Vector3.Distance(transform.position, new Vector3(25f, 3.7f, 2.65f)) >= .5)
             {
-                /*transform.LookAt(new Vector3(25f, 3.5f, 2.65f));
-                transform.position += transform.forward * 2f * Time.deltaTime;*/
                 Vector3 targetVector = DestinationPuerta.transform.position;
-                //transform.position += transform.forward * 2f * Time.deltaTime;
                 agent.SetDestination(targetVector);
                 transform.LookAt(targetVector);
 
@@ -100,7 +93,6 @@ public class BossBehavior : GameCTRL
 
         if ((questState == 2 || questState == 4) && cajon == false)
         {
-
             transform.LookAt(new Vector3(-5f, 1.6f, 5.38f));
             if (Vector3.Distance(transform.position, new Vector3(-5.09f, 1.53f, 5.5f)) >= .2)
             {
@@ -112,8 +104,6 @@ public class BossBehavior : GameCTRL
                 animator.SetBool("pointing", false);
                 animator.SetBool("talking", false);
             }
-
-
         }
         if (cajon)
         {
@@ -124,21 +114,16 @@ public class BossBehavior : GameCTRL
             animator.SetBool("pointing", false);
             animator.SetBool("talking", true);
         }
-
         // Sumar el vector a la velocidad del Rigidbody
         Vector3 additionalVelocity = new Vector3(0, 140, 0);
         rb.velocity += additionalVelocity;
     }
 
-
-
     void ApproachPlayer()
     {
-        //var fwd1= Vector3.Dot(rb.velocity, tr.forward);
         if (Vector3.Distance(transform.position, player.position) > distanciaDelPlayer)
         {
             Vector3 targetVector = player.transform.position;
-            //transform.position += transform.forward * 2f * Time.deltaTime;
             agent.SetDestination(targetVector);
             transform.LookAt(targetVector);
 
@@ -157,7 +142,4 @@ public class BossBehavior : GameCTRL
         }
 
     }
-
-
-
 }

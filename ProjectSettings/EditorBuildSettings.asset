@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Officina.unity
     guid: e64ab6c66efea5e4d9f5754544d67fa2
+  - enabled: 1
+    path: Assets/Scenes/ArchivosNuevos.unity
+    guid: 0f5472c04298f604ba13fdaf8b90de4a
+  - enabled: 1
+    path: Assets/Scenes/ArchivosViejos.unity
+    guid: c370973df8d50a341b1175da1d0ec440
   m_configObjects: {}

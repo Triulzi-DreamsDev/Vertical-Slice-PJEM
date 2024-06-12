@@ -13,6 +13,9 @@ public class GameCTRL : MonoBehaviour
     void Start()
     {
         questState = 0;
+
+        nameOfPlayer = "Gery";
+        esHombre = true;
     }
 
     // Update is called once per frame

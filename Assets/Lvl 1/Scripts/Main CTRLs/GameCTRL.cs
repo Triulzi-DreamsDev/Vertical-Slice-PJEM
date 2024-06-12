@@ -1,3 +1,5 @@
+using Ink.Runtime;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +10,8 @@ public class GameCTRL : MonoBehaviour
     public static string nameOfPlayer;
     public static int questState;
     public static bool esHombre;
+    public static bool tinesArchivo;
+
 
     // Start is called before the first frame update
     void Start()
@@ -15,13 +19,16 @@ public class GameCTRL : MonoBehaviour
         questState = 0;
 
         //Quitar el comentario de lo de abajo para pruebas:
-        //nameOfPlayer = "Gery";
-        //esHombre = true;
+        nameOfPlayer = "Gery";
+        esHombre = false;
+
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+    
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,6 +38,7 @@ public class DialogueTrigger : GameCTRL
         {
             visualCue.SetActive(false);
         }
+
     }
 
 

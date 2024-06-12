@@ -19,6 +19,9 @@ public class BossBehavior : GameCTRL
     [SerializeField]
     Transform DestinationPuerta;
 
+    [SerializeField]
+    Transform DestnationCajon;
+
     public bool cajon;
 
     [SerializeField]
@@ -28,10 +31,6 @@ public class BossBehavior : GameCTRL
     Animator animator;
 
     Rigidbody rb;
-    Transform tr;
-    // Start is called before the first frame update
-
-    public bool centro;
     void Start()
     {
         agent = this.GetComponent<NavMeshAgent>();
@@ -40,19 +39,16 @@ public class BossBehavior : GameCTRL
         steps = 0;
         animator.SetBool("idle", true);
         cajon = false;
-        centro = false;
         rb = this.GetComponent<Rigidbody>();
-        tr = this.GetComponent<Transform>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         if (DialogueManager.GetInstance().dialogueIsPlaying && (questState == 0 || questState == 1))
         {
-            // Asegúrate de que el jefe mire al jugador mientras habla
+            // Asegï¿½rate de que el jefe mire al jugador mientras habla
             transform.LookAt(player.position);
             animator.SetBool("idle", false);
             animator.SetBool("walking", false);
@@ -127,7 +123,6 @@ public class BossBehavior : GameCTRL
             animator.SetBool("pointing", false);
             animator.SetBool("talking", true);
         }
-
         // Sumar el vector a la velocidad del Rigidbody
         Vector3 additionalVelocity = new Vector3(0, 140, 0);
         rb.velocity += additionalVelocity;

@@ -19,8 +19,8 @@ public class GameCTRL : MonoBehaviour
         questState = 0;
 
         //Quitar el comentario de lo de abajo para pruebas:
-        nameOfPlayer = "Gery";
-        esHombre = false;
+        //nameOfPlayer = "Gery";
+        //esHombre = false;
 
 
 

@@ -6022,6 +6022,7 @@ GameObject:
   - component: {fileID: 1369000717473202640}
   - component: {fileID: 6423612479220668510}
   - component: {fileID: 2604257835166332732}
+  - component: {fileID: 6423612479220668511}
   m_Layer: 0
   m_Name: Librero:Librero
   m_TagString: Untagged
@@ -10725,6 +10726,7 @@ GameObject:
   - component: {fileID: 2157172479102784237}
   - component: {fileID: 1017400532604088145}
   - component: {fileID: 6024430235526926578}
+  - component: {fileID: 6024430235526926579}
   m_Layer: 0
   m_Name: Librero:Librero
   m_TagString: Untagged
@@ -13316,6 +13318,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6024430235526926579
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4069940333842911177}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9888896, y: 4.959875, z: 1.0555615}
+  m_Center: {x: -0.0000019073486, y: 0.00000011920929, z: 3.1554436e-30}
 --- !u!1 &6037563996258725329
 GameObject:
   m_ObjectHideFlags: 0
@@ -13798,6 +13821,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615195537680152754}
   m_Mesh: {fileID: 1100936844538772621, guid: a346a029823742d4aad66bef239247c6, type: 3}
+--- !u!65 &6423612479220668511
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615195537680152754}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9888893, y: 4.959875, z: 1.0555614}
+  m_Center: {x: -0.0000048987567, y: 0.00000011920929, z: 0.00000047683716}
 --- !u!1 &6440924198057426630
 GameObject:
   m_ObjectHideFlags: 0
@@ -14977,6 +15021,7 @@ GameObject:
   - component: {fileID: 510226571249641470}
   - component: {fileID: 798374401513126572}
   - component: {fileID: 6996702426295615513}
+  - component: {fileID: 7255318645770856285}
   m_Layer: 0
   m_Name: Librero3
   m_TagString: Untagged
@@ -14984,6 +15029,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &7255318645770856285
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7255318645770856284}
+  m_Material: {fileID: 13400000, guid: d21bf1f7b4ff4564aad1b1f9ff50a4f1, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9888893, y: 4.959875, z: 1.0555614}
+  m_Center: {x: -0.00000047683716, y: 0.00000011920929, z: -0.000004053116}
 --- !u!4 &7255635792167154953
 Transform:
   m_ObjectHideFlags: 0

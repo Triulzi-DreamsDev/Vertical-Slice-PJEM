@@ -4,26 +4,59 @@ using UnityEngine;
 
 public class TriggerEscritorio : GameCTRL
 {
+    [Header("Visual Cue")]
+    [SerializeField] private GameObject visualCue;
+
     [SerializeField]
     GameObject mensajeUI;
     // Start is called before the first frame update
-    void Start()
+    private bool playerInRange;
+
+    private void Awake()
     {
-        mensajeUI.SetActive(false);
+        playerInRange = false;
+        visualCue.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
 
+        if (playerInRange && tinesArchivo == true)
+        {
+            visualCue.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                mensajeUI.SetActive(true);
+            }
+        }
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            visualCue.SetActive(false);
+        }
+
+        if (questState == 3 || questState == 5)
+        {
+            visualCue.SetActive(false);
+        }
+
     }
+
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "Player" && tinesArchivo == true)
+        if (collider.gameObject.tag == "Player")
         {
-            mensajeUI.SetActive(true);
+            playerInRange = true;
         }
     }
 
+    private void OnTriggerExit(Collider collider)
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            playerInRange = false;
+            visualCue.SetActive(false);
+            mensajeUI.SetActive(false);
+        }
+    }
 }

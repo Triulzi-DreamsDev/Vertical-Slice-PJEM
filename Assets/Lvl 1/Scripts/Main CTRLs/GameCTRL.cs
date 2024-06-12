@@ -14,8 +14,9 @@ public class GameCTRL : MonoBehaviour
     {
         questState = 0;
 
-        nameOfPlayer = "Gery";
-        esHombre = true;
+        //Quitar el comentario de lo de abajo para pruebas:
+        //nameOfPlayer = "Gery";
+        //esHombre = true;
     }
 
     // Update is called once per frame

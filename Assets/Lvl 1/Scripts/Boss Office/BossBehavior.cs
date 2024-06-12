@@ -47,15 +47,19 @@ public class BossBehavior : GameCTRL
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         if (DialogueManager.GetInstance().dialogueIsPlaying && (questState == 0 || questState == 1))
-        {
-            // Aseg�rate de que el jefe mire al jugador mientras habla
-            transform.LookAt(player.position);
-            animator.SetBool("idle", false);
-            animator.SetBool("walking", false);
-            animator.SetBool("angry", false);
-            animator.SetBool("pointing", false);
-            animator.SetBool("talking", true);
-            return;
+        {   
+            if (Vector3.Distance(transform.position, player.position) <= distanciaDelPlayer)
+            {
+                // Asegurate de que el jefe mire al jugador mientras habla
+                transform.LookAt(player.position);
+                animator.SetBool("idle", false);
+                animator.SetBool("walking", false);
+                animator.SetBool("angry", false);
+                animator.SetBool("pointing", false);
+                animator.SetBool("talking", true);
+                return;
+            }
+            
         }
 
         if (officeQuest)

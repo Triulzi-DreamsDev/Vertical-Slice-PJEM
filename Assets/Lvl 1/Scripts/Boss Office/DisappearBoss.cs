@@ -25,7 +25,7 @@ public class DisappearBoss : GameCTRL
         }
         if (collider.gameObject.tag == "Player")
         {
-            rooms = 0;
+            rooms = 3;
             SceneManager.LoadScene("Officina");
         }
     }

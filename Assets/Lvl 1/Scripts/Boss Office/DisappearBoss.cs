@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DisappearBoss : MonoBehaviour
+public class DisappearBoss : GameCTRL
 {
     // Start is called before the first frame update
     void Start()
@@ -25,6 +25,7 @@ public class DisappearBoss : MonoBehaviour
         }
         if (collider.gameObject.tag == "Player")
         {
+            rooms = 0;
             SceneManager.LoadScene("Officina");
         }
     }

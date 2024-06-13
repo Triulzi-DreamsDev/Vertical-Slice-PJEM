@@ -7,7 +7,7 @@ public class GeneradorModelo3D : GameCTRL
     public GameObject modeloHombre;
     public GameObject modeloMujer;
 
-    private void Start()
+    private void Awake()
     {
         if (modeloHombre == null || modeloMujer == null)
         {

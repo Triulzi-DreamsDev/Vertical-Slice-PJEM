@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Boss
   - Escritorio
+  - VisualCue
   layers:
   - Default
   - TransparentFX

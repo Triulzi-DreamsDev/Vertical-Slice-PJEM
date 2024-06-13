@@ -2672,7 +2672,7 @@ GameObject:
   - component: {fileID: 3236460492752590105}
   m_Layer: 0
   m_Name: VisualCueHablar
-  m_TagString: Untagged
+  m_TagString: VisualCue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3960,6 +3960,7 @@ GameObject:
   - component: {fileID: 6545179287576037199}
   - component: {fileID: 2897948093825430633}
   - component: {fileID: 465529930765321791}
+  - component: {fileID: -2814200892063289403}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4002,7 +4003,7 @@ MonoBehaviour:
   _turnSpeed: 1000
   maleAnimator: {fileID: 1592824782342354624}
   femaleAnimator: {fileID: 1024654601275848753}
-  boss: {fileID: 0}
+  boss: {fileID: 6587161041915724646, guid: b68a9a8ab1d25424b82e686e2d15a635, type: 3}
 --- !u!54 &2897948093825430633
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4051,6 +4052,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2.304541, z: 1}
   m_Center: {x: -5.1067722e-17, y: 0.09124857, z: 0}
+--- !u!114 &-2814200892063289403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5770745230189525868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5a614f40d0bcef4b896320f2b701509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modeloHombre: {fileID: 8352367195614691641}
+  modeloMujer: {fileID: 6665529966389678216}
 --- !u!1 &5776311610864471632
 GameObject:
   m_ObjectHideFlags: 0

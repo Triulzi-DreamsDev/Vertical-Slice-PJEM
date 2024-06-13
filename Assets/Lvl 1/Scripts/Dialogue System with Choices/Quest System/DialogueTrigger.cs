@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DialogueTrigger : GameCTRL
 {
    private GameObject player;
-   // private GameObject visualCue;
+    private GameObject canvasPlayer, visualCue;
 
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
@@ -18,9 +19,21 @@ public class DialogueTrigger : GameCTRL
        player = GameObject.FindGameObjectWithTag("Player");
         
         playerInRange = false;
-       // visualCue = player.transform.Find("VisualCue").gameObject;
-       // visualCue.SetActive(false);
+
+        canvasPlayer = player.transform.Find("Canvas").gameObject;
+        visualCue = canvasPlayer.transform.Find("VisualCueHablar").gameObject;
+
+        if (visualCue != null)
+        {
+            Debug.Log("Hijo encontrado: " + visualCue.name);
+            visualCue.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("Hijo no encontrado");
+        }
         
+
     }
 
     GameObject FindChildWithTag(GameObject parent, string tag)
@@ -41,11 +54,10 @@ public class DialogueTrigger : GameCTRL
 
     private void Update()
     {
-        //visualCue = player.transform.Find("VisualCue").gameObject;
 
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
-           // visualCue.SetActive(true);
+            visualCue.SetActive(true);
             if (Input.GetKeyDown(KeyCode.A))
             {
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
@@ -53,12 +65,13 @@ public class DialogueTrigger : GameCTRL
         }
         if (DialogueManager.GetInstance().dialogueIsPlaying)
         {
-           // visualCue.SetActive(false);
+            if (visualCue != null)
+                visualCue.SetActive(false);
         }
 
         if (questState == 3 || questState == 5)
         {
-           // visualCue.SetActive(false);
+            visualCue.SetActive(false);
         }
 
     }
@@ -77,7 +90,7 @@ public class DialogueTrigger : GameCTRL
         if (collider.gameObject.tag == "Player")
         {
             playerInRange = false;
-           // visualCue.SetActive(false);
+            visualCue.SetActive(false);
         }
     }
 }

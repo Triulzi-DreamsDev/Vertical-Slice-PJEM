@@ -15,7 +15,7 @@ public class DialogueTrigger : GameCTRL
     private bool playerInRange;
 
     [Header("Interaction Conditions")]
-    [SerializeField] private bool interactionConditional; // Specify if interaction is conditional
+    [SerializeField] private bool file; // Specify if interaction is conditional
 
     private void Start()
     {
@@ -55,7 +55,7 @@ public class DialogueTrigger : GameCTRL
 
     private void Update()
     {
-        if (playerInRange && (!interactionConditional || tinesArchivo == true) && !DialogueManager.GetInstance().dialogueIsPlaying)
+        if (playerInRange && (!file || tinesArchivo == true) && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             visualCue.SetActive(true);
             if (Input.GetKeyDown(KeyCode.A))
@@ -81,7 +81,7 @@ public class DialogueTrigger : GameCTRL
         if (collider.gameObject.tag == "Player")
         {
             playerInRange = true;
-            if (interactionConditional)
+            if (file)
             {
                 visualCue.SetActive(false);
             }

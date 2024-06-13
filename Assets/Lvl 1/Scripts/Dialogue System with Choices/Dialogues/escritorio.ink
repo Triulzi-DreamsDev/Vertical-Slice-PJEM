@@ -1,4 +1,5 @@
 VAR playerName = ""
+VAR haveFile = ""
 -> start
 
 === start ===

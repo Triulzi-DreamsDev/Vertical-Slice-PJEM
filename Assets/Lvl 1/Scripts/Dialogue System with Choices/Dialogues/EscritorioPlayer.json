@@ -1,0 +1,1 @@
+﻿{"inkVersion":21,"root":[[{"->":"start"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"start":["^El archivo que encontre esta vacio. ","#","^speaker:","ev",{"VAR?":"playerName"},"out","/ev","/#","\n","end",{"#f":1}],"global decl":["ev","str","^","/str",{"VAR=":"playerName"},"str","^","/str",{"VAR=":"haveFile"},"/ev","end",null],"#f":1}],"listDefs":{}}

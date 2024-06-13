@@ -106,6 +106,7 @@ public class DialogueManager : GameCTRL
     {
         currentStory = new Story(inkJSON.text);
         currentStory.variablesState["playerName"] = nameOfPlayer;
+        currentStory.variablesState["haveFile"] = tinesArchivo;
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 

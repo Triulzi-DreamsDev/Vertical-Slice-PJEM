@@ -1,7 +1,12 @@
 VAR playerName = ""
+VAR haveFile = ""
 -> start
 
 === start ===
+{haveFile == true:
+    Ya tienes el archivo "Proyecto de Ley Crucial". #speaker:Librero 
+-> END
+- else:
 Oh, el archivo "Proyecto de Ley Crucial"...#speaker:Librero 
 ¿Debería tomarlo?
 
@@ -10,6 +15,7 @@ Oh, el archivo "Proyecto de Ley Crucial"...#speaker:Librero
     + [No]
         -> dejar
 
+}
 === tomar ===
 #bool:true
 Bien, ahora tengo el archivo "Proyecto de Ley Crucial".

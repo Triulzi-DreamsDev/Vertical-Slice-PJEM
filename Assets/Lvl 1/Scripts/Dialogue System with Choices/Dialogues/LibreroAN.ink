@@ -1,11 +1,11 @@
 VAR playerName = ""
-VAR archivo = ""
+VAR haveFile = ""
 
 -> start
 
 === start ===
-{archivo == true:
-    Ya has tomado el archivo "Proyecto de Ley Crucial".
+{haveFile== true:
+    Ya has tomado el archivo "Proyecto de Ley Crucial". #speaker:Librero 
 
 -> END
 - else:

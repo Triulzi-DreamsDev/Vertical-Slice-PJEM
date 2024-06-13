@@ -1,4 +1,5 @@
  VAR playerName = ""
+ VAR haveFile = ""
  Jefe, necesito explicarle algo importante. Primero, me disculpo por cualquier malentendido reciente. #speaker:{playerName}
  Estoy investigando la desaparición de un archivo crucial y acabo de recibir un mensaje anónimo que podría ser una pista.
  ¿Un mensaje anónimo? Cuéntame más. #speaker:CEO HERO ENTERPRISE

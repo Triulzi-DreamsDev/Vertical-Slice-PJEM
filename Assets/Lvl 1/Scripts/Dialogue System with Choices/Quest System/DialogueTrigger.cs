@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class DialogueTrigger : GameCTRL
 {
-   private GameObject player;
+    private GameObject player;
     private GameObject canvasPlayer, visualCue;
 
     [Header("Ink JSON")]
@@ -14,10 +14,13 @@ public class DialogueTrigger : GameCTRL
 
     private bool playerInRange;
 
+    [Header("Interaction Conditions")]
+    [SerializeField] private bool interactionConditional; // Specify if interaction is conditional
+
     private void Start()
     {
-       player = GameObject.FindGameObjectWithTag("Player");
-        
+        player = GameObject.FindGameObjectWithTag("Player");
+
         playerInRange = false;
 
         canvasPlayer = player.transform.Find("Canvas").gameObject;
@@ -32,8 +35,6 @@ public class DialogueTrigger : GameCTRL
         {
             Debug.Log("Hijo no encontrado");
         }
-        
-
     }
 
     GameObject FindChildWithTag(GameObject parent, string tag)
@@ -54,8 +55,7 @@ public class DialogueTrigger : GameCTRL
 
     private void Update()
     {
-
-        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
+        if (playerInRange && (!interactionConditional || tinesArchivo == true) && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             visualCue.SetActive(true);
             if (Input.GetKeyDown(KeyCode.A))
@@ -63,6 +63,7 @@ public class DialogueTrigger : GameCTRL
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
             }
         }
+
         if (DialogueManager.GetInstance().dialogueIsPlaying)
         {
             if (visualCue != null)
@@ -73,15 +74,17 @@ public class DialogueTrigger : GameCTRL
         {
             visualCue.SetActive(false);
         }
-
     }
-
 
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "Player")
         {
             playerInRange = true;
+            if (interactionConditional)
+            {
+                visualCue.SetActive(false);
+            }
         }
     }
 

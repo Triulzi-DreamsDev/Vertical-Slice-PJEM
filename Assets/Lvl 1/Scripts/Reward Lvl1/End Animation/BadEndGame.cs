@@ -41,5 +41,6 @@ public class BadEndGame : GameCTRL
         tryAgain.SetActive(true);
         yield return new WaitForSeconds(14); // Espera unos segundos
         SceneManager.LoadScene(2);
+        rooms = 0;
     }
 }

@@ -40,6 +40,6 @@ public class BadEndGame : GameCTRL
         BadCinematic.SetActive(true);
         tryAgain.SetActive(true);
         yield return new WaitForSeconds(14); // Espera unos segundos
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }

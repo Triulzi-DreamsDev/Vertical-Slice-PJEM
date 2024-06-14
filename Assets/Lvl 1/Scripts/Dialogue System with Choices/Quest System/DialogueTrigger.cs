@@ -80,6 +80,9 @@ public class DialogueTrigger : GameCTRL
     {
         if (collider.gameObject.tag == "Player")
         {
+            // Avisa que alguien ya esta hablando
+            isMessageActive = true;
+
             playerInRange = true;
             if (file)
             {
@@ -92,6 +95,9 @@ public class DialogueTrigger : GameCTRL
     {
         if (collider.gameObject.tag == "Player")
         {
+            // Avisa que ya no esta hablando con esa persona
+            isMessageActive = false;
+
             playerInRange = false;
             visualCue.SetActive(false);
         }

@@ -48,7 +48,7 @@ public class BossBehavior : GameCTRL
 
         if (DialogueManager.GetInstance().dialogueIsPlaying && (questState == 0 || questState == 1))
         {   
-            if (Vector3.Distance(transform.position, player.position) <= distanciaDelPlayer && GameCTRL.isMessageActive == false)
+            if (Vector3.Distance(transform.position, player.position) <= distanciaDelPlayer && !isMessageActive)
             {
                 // Asegurate de que el jefe mire al jugador mientras habla
                 transform.LookAt(player.position);
@@ -65,13 +65,13 @@ public class BossBehavior : GameCTRL
         if (officeQuest)
         {
             //Approach Player
-            if (steps == 0 && GameCTRL.isMessageActive == false)
+            if (steps == 0)
             {
                 ApproachPlayer();
             }
         }
 
-        if (questState == 1)
+        if (questState == 1 && Input.GetKeyDown(KeyCode.Return))
         {
             goBackOffice = true;
         }

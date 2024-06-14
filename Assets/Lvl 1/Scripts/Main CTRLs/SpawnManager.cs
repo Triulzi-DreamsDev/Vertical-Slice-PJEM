@@ -10,6 +10,8 @@ public class SpawnManager : GameCTRL
     Transform archivosNuevosSpawn;
     [SerializeField]
     Transform archivosViejosSpawn;
+    [SerializeField]
+    Transform oficinaBossSpawn;
 
     [SerializeField]
     GameObject playerPrefab;
@@ -28,6 +30,10 @@ public class SpawnManager : GameCTRL
         else if (rooms == 2) //Archivos Viejos
         {
             GameObject player = Instantiate(playerPrefab, archivosViejosSpawn.position, archivosViejosSpawn.rotation);
+        }
+        else if (rooms == 3) // Oficina Jefe
+        {
+            GameObject player = Instantiate(playerPrefab, oficinaBossSpawn.position, oficinaBossSpawn.rotation);
         }
     }
 

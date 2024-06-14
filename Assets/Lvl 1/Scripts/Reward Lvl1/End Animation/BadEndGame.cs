@@ -8,19 +8,18 @@ public class BadEndGame : GameCTRL
     [SerializeField] GameObject Fade;
     [SerializeField] GameObject BadCinematic;
 
-    [SerializeField] GameObject Boss;
-    [SerializeField] GameObject Player;
     [SerializeField] Animator BossA;
     [SerializeField] Animator PlayerA;
 
+    [SerializeField] GameObject PlayerB;
     [SerializeField] GameObject tryAgain;
     // Start is called before the first frame update
     void Start()
     {
         Fade.SetActive(false);
         BadCinematic.SetActive(false);
-        BossA = Boss.GetComponent<Animator>();
-        PlayerA = Player.GetComponent<Animator>();
+        BossA = GameObject.FindGameObjectWithTag("Boss").GetComponent<Animator>();
+        PlayerA = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         tryAgain.SetActive(false);
     }
 
@@ -35,8 +34,9 @@ public class BadEndGame : GameCTRL
 
     IEnumerator PlayBadSequence()
     {
-
         Fade.SetActive(true);
+        GameObject.FindGameObjectWithTag("Player").SetActive(false);
+        PlayerB.SetActive(true);
         BadCinematic.SetActive(true);
         tryAgain.SetActive(true);
         yield return new WaitForSeconds(14); // Espera unos segundos

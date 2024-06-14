@@ -13,7 +13,7 @@ public class GameCTRL : MonoBehaviour
     public static bool esHombre;
     public static int rooms = 0;
     public static bool tinesArchivo;
-
+    public static bool isMessageActive = false;
 
     // Start is called before the first frame update
     void Start()

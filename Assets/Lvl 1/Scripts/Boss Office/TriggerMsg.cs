@@ -41,7 +41,7 @@ public class TriggerMsg : GameCTRL
     private void OnTriggerEnter(Collider collider)
     {
         // Solo muestra el mensaje si el jugador entra y no hay otro mensaje activo
-        if (collider.gameObject.tag == "Player" && questState == 1 && !GameCTRL.isMessageActive)
+        if (collider.gameObject.tag == "Player" && questState == 1)
         {
             mensajeUI.SetActive(true);
         }

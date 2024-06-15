@@ -38,9 +38,11 @@ public class DialogueManager : GameCTRL
 
     private const string SPEAKER_TAG = "speaker";
     private const string TRIGGER_TAG = "trigger";
+    private const string BOOL_TAG = "bool";
     //private const string LAYOUT_TAG = "layout";
 
     private DialogueVariables dialogueVariables;
+
 
     private void Awake()
     {
@@ -104,6 +106,7 @@ public class DialogueManager : GameCTRL
     {
         currentStory = new Story(inkJSON.text);
         currentStory.variablesState["playerName"] = nameOfPlayer;
+        currentStory.variablesState["haveFile"] = tinesArchivo;
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
@@ -225,6 +228,18 @@ public class DialogueManager : GameCTRL
                 case TRIGGER_TAG:
                     questState = Convert.ToInt32(tagValue);
                     print(questState);
+                    break;
+                case BOOL_TAG:
+                    bool boolValue;
+                    if (bool.TryParse(tagValue, out boolValue))
+                    {
+                        tinesArchivo = boolValue;
+                        Debug.Log("isActivated set to: " + tinesArchivo);
+                    }
+                    else
+                    {
+                        Debug.LogError("Failed to parse bool value from tag: " + tag);
+                    }
                     break;
                 //case PORTRAIT_TAG:
                 //    portraitAnimator.Play(tagValue);

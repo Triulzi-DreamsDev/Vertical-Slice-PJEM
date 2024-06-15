@@ -1,26 +1,61 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DialogueTrigger : GameCTRL
 {
-    [Header("Visual Cue")]
-    [SerializeField] private GameObject visualCue;
+    private GameObject player;
+    private GameObject canvasPlayer, visualCue;
 
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
 
     private bool playerInRange;
 
-    private void Awake()
+    [Header("Interaction Conditions")]
+    [SerializeField] private bool file; // Specify if interaction is conditional
+
+    private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+
         playerInRange = false;
-        visualCue.SetActive(false);
+
+        canvasPlayer = player.transform.Find("Canvas").gameObject;
+        visualCue = canvasPlayer.transform.Find("VisualCueHablar").gameObject;
+
+        if (visualCue != null)
+        {
+            Debug.Log("Hijo encontrado: " + visualCue.name);
+            visualCue.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("Hijo no encontrado");
+        }
+    }
+
+    GameObject FindChildWithTag(GameObject parent, string tag)
+    {
+        GameObject child = null;
+
+        foreach (Transform transform in parent.transform)
+        {
+            if (transform.CompareTag(tag))
+            {
+                child = transform.gameObject;
+                break;
+            }
+        }
+
+        return child;
     }
 
     private void Update()
     {
-        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
+        if (playerInRange && (!file || tinesArchivo == true) && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             visualCue.SetActive(true);
             if (Input.GetKeyDown(KeyCode.A))
@@ -28,9 +63,11 @@ public class DialogueTrigger : GameCTRL
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
             }
         }
+
         if (DialogueManager.GetInstance().dialogueIsPlaying)
         {
-            visualCue.SetActive(false);
+            if (visualCue != null)
+                visualCue.SetActive(false);
         }
 
         if (questState == 3 || questState == 5)
@@ -39,12 +76,18 @@ public class DialogueTrigger : GameCTRL
         }
     }
 
-
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "Player")
         {
+            // Avisa que alguien ya esta hablando
+            isMessageActive = true;
+
             playerInRange = true;
+            if (file)
+            {
+                visualCue.SetActive(false);
+            }
         }
     }
 
@@ -52,6 +95,9 @@ public class DialogueTrigger : GameCTRL
     {
         if (collider.gameObject.tag == "Player")
         {
+            // Avisa que ya no esta hablando con esa persona
+            isMessageActive = false;
+
             playerInRange = false;
             visualCue.SetActive(false);
         }

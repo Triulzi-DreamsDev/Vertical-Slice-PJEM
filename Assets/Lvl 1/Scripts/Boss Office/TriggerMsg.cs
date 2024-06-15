@@ -19,31 +19,31 @@ public class TriggerMsg : GameCTRL
         
     }
 
-
-
     public void Contestar()
     {
         mensajeUI.SetActive(false);
         respuesta.SetActive(true);
+
     }
 
     public void Enviar()
     {
         respuesta.SetActive(false);
+
     }
 
     public void Ignorar()
     {
         mensajeUI.SetActive(false);
+
     }
 
     private void OnTriggerEnter(Collider collider)
     {
+        // Solo muestra el mensaje si el jugador entra y no hay otro mensaje activo
         if (collider.gameObject.tag == "Player" && questState == 1)
         {
             mensajeUI.SetActive(true);
         }
     }
-
-
 }

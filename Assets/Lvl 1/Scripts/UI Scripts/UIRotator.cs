@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class UIRotator : MonoBehaviour
 {
-    [SerializeField]
     GameObject cameraM;
 
     private Transform trans;
@@ -13,12 +12,14 @@ public class UIRotator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // trans = cameraM.transform;
+        // trans = cameraM.transform;
+        cameraM = GameObject.FindWithTag("MainCamera");
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         trans = cameraM.transform;
         transform.LookAt(trans);
         transform.Rotate(offset);

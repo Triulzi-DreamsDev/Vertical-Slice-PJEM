@@ -16,8 +16,7 @@ public class PlayerController : GameCTRL
 
     Animator animator;
 
-    [SerializeField]
-    GameObject boss;
+    Transform boss;
 
     private void Start()
     {
@@ -37,6 +36,8 @@ public class PlayerController : GameCTRL
 
     private void Update()
     {
+        boss = GameObject.FindGameObjectWithTag("Player").transform;
+
         if (DialogueManager.GetInstance().dialogueIsPlaying)
         {
             animator.SetBool("idle", false);

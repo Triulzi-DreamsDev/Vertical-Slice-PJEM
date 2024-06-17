@@ -14,6 +14,7 @@ public class GameCTRL : MonoBehaviour
     public static int rooms = 0;
     public static bool tinesArchivo;
     public static bool isMessageActive = false;
+    public static int q = 0;
 
     // Start is called before the first frame update
     void Start()

@@ -19,6 +19,7 @@ public class Spawn_AV : GameCTRL
         if (rooms == 2) // Archivos Viejos
         {
             GameObject player = Instantiate(playerPrefab, archivosViejosSpawn.position, archivosViejosSpawn.rotation);
+            q = 1;
         }
         else if (rooms == 0) // Lobby
         {

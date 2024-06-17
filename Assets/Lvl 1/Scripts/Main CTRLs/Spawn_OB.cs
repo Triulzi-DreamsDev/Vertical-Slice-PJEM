@@ -21,6 +21,7 @@ public class Spawn_OB : GameCTRL
         if (rooms == 3) // Oficina Jefe
         {
             GameObject player = Instantiate(playerPrefab, oficinaBossSpawn.position, oficinaBossSpawn.rotation);
+            q = 1;
         }
         else if (rooms == 0) // Lobby
         {

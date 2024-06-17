@@ -12,9 +12,10 @@ public class SpawnManager : GameCTRL
     Transform archivosViejosSpawn;
     [SerializeField]
     Transform oficinaBossSpawn;
-
     [SerializeField]
     GameObject playerPrefab;
+    [SerializeField]
+    GameObject pb;
 
     bool spawn = false;
     // Start is called before the first frame update
@@ -23,7 +24,9 @@ public class SpawnManager : GameCTRL
         if (rooms == 0) //Lobby
         {
             GameObject player = Instantiate(playerPrefab, initialLobbySpawn.position, initialLobbySpawn.rotation);
-        }else if (rooms == 1) //Archivos Nuevos
+}
+        
+        else if (rooms == 1) //Archivos Nuevos
         {
             GameObject player = Instantiate(playerPrefab, archivosNuevosSpawn.position, archivosNuevosSpawn.rotation);
         }

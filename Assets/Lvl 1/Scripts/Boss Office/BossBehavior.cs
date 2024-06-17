@@ -30,6 +30,9 @@ public class BossBehavior : GameCTRL
     [SerializeField]
     Animator animator;
 
+    [SerializeField]
+    GameObject pb;
+
     Rigidbody rb;
     void Start()
     {
@@ -60,6 +63,12 @@ public class BossBehavior : GameCTRL
                 return;
             }
             
+        }
+
+     /*--------------------*/ if (q==1)/*--------------------*/
+        {
+            pb.SetActive(false);
+           
         }
 
         if (officeQuest)

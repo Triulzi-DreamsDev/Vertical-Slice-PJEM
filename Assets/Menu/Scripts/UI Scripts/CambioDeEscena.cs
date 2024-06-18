@@ -9,6 +9,6 @@ public class CambioDeEscena : MonoBehaviour
     public void CargarProximaEscena()
     {
         // Carga la próxima escena (asegúrate de que la escena esté en el Build Settings)
-        SceneManager.LoadScene("Vertical Slice");
+        SceneManager.LoadScene("Lobby");
     }
 }

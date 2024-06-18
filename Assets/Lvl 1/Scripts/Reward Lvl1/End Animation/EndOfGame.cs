@@ -68,11 +68,12 @@ public class EndOfGame : GameCTRL
         yield return new WaitForSeconds(1);
 
         Trofeo.SetActive(true);
+        Pasolvl1 = true;
     }
 
     public void BtnMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Lobby");
     }
 
 

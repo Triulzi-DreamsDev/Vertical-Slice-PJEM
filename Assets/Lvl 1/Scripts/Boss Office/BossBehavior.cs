@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -64,11 +65,10 @@ public class BossBehavior : GameCTRL
             }
             
         }
-
-     /*--------------------*/ if (q==1)/*--------------------*/
+        string Scene = Application.loadedLevelName;
+     /*--------------------*/ if (SeFueJefe && Scene=="Vertical Slice")/*--------------------*/
         {
-            pb.SetActive(false);
-           
+                pb.SetActive(false);
         }
 
         if (officeQuest)

@@ -2148,6 +2148,7 @@ MonoBehaviour:
   cajon: 0
   distanciaDelPlayer: 2
   animator: {fileID: 9085729716149948404}
+  pb: {fileID: 898654392}
 --- !u!4 &898654397
 Transform:
   m_ObjectHideFlags: 0

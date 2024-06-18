@@ -42,5 +42,6 @@ public class BadEndGame : GameCTRL
         yield return new WaitForSeconds(14); // Espera unos segundos
         SceneManager.LoadScene(2);
         rooms = 0;
+        SeFueJefe = false;
     }
 }

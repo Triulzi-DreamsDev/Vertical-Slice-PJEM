@@ -22,6 +22,7 @@ public class DisappearBoss : GameCTRL
     {
         if (collider.gameObject.tag == "Boss")
         {
+            SeFueJefe = true;
             Destroy(collider.gameObject);
         }
         if (collider.gameObject.tag == "Player")

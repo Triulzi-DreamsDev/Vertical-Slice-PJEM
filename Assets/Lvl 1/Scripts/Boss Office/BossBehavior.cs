@@ -66,6 +66,7 @@ public class BossBehavior : GameCTRL
             
         }
         string Scene = Application.loadedLevelName;
+
      /*--------------------*/ if (SeFueJefe && Scene=="Vertical Slice")/*--------------------*/
         {
                 pb.SetActive(false);

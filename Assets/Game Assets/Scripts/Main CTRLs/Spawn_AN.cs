@@ -19,7 +19,7 @@ public class Spawn_AN : GameCTRL
         if (rooms == 1) // Archivos Nuevos
         {
             GameObject player = Instantiate(playerPrefab, archivosNuevosSpawn.position, archivosNuevosSpawn.rotation);
-            q = 1;
+            q = 3; // Ajustar la variable q
         }
         else if (rooms == 0) // Lobby
         {

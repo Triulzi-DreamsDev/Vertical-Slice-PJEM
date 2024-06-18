@@ -7,6 +7,11 @@ public class TriggerMsg : GameCTRL
     [SerializeField]
     GameObject mensajeUI, respuesta;
     // Start is called before the first frame update
+
+    public bool isSpecialArea = false;
+
+    [SerializeField]
+    BossBehavior behavior;
     void Start()
     {
         mensajeUI.SetActive(false);
@@ -35,15 +40,31 @@ public class TriggerMsg : GameCTRL
     public void Ignorar()
     {
         mensajeUI.SetActive(false);
-
+        respuesta.SetActive(false);
+        if (isSpecialArea)
+        {
+            if (tinesArchivo)
+            {
+                behavior.officeQuest = true;
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider collider)
     {
-        // Solo muestra el mensaje si el jugador entra y no hay otro mensaje activo
-        if (collider.gameObject.tag == "Player" && questState == 1)
+        if (collider.gameObject.tag == "Player")
         {
-            mensajeUI.SetActive(true);
+            if (isSpecialArea)
+            {
+                if (tinesArchivo)
+                {
+                    mensajeUI.SetActive(true);
+                }
+            }
+            else if (questState == 1)
+            {
+                mensajeUI.SetActive(true);
+            }
         }
     }
 }

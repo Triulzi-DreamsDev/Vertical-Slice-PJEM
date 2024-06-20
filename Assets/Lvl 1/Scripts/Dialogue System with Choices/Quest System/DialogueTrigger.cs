@@ -7,6 +7,9 @@ using UnityEngine;
 public class DialogueTrigger : GameCTRL
 {
     private GameObject player;
+    [SerializeField]
+    private GameObject NP;
+
     private GameObject canvasPlayer, visualCue;
 
     [Header("Ink JSON")]
@@ -16,6 +19,13 @@ public class DialogueTrigger : GameCTRL
 
     [Header("Interaction Conditions")]
     [SerializeField] private bool file; // Specify if interaction is conditional
+
+    [Header("Configuraciones del NPC")]
+    [SerializeField] private bool shouldRotate; // Determina si el NPC debe voltear hacia el jugador
+
+
+    private Vector3 originalPosition;
+    private Quaternion originalRotation;
 
     private void Start()
     {
@@ -35,6 +45,10 @@ public class DialogueTrigger : GameCTRL
         {
             Debug.Log("Hijo no encontrado");
         }
+
+        // Guarda la posición y rotación original del NPC
+        originalPosition = NP.transform.position;
+        originalRotation = NP.transform.rotation;
     }
 
     GameObject FindChildWithTag(GameObject parent, string tag)
@@ -61,6 +75,7 @@ public class DialogueTrigger : GameCTRL
             if (Input.GetKeyDown(KeyCode.A))
             {
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+
             }
         }
 
@@ -73,6 +88,18 @@ public class DialogueTrigger : GameCTRL
         if (questState == 3 || questState == 5)
         {
             visualCue.SetActive(false);
+        }
+
+        if (playerInRange)
+        {
+            if (shouldRotate)
+            {
+                LookAtPlayer();
+            }
+        }
+        else
+        {
+            ReturnToOriginalPosition();
         }
     }
 
@@ -101,5 +128,25 @@ public class DialogueTrigger : GameCTRL
             playerInRange = false;
             visualCue.SetActive(false);
         }
+    }
+
+    private void LookAtPlayer()
+    {
+        // Calcula la dirección desde el NPC hacia el jugador
+        Vector3 direction = player.transform.position - NP.transform.position;
+        direction.y = 0; // Ignora la componente vertical
+
+        // Calcula la nueva rotación que debe tener el NPC para mirar al jugador
+        Quaternion rotation = Quaternion.LookRotation(direction);
+
+        // Ajusta la rotación del NPC
+        NP.transform.rotation = Quaternion.Slerp(NP.transform.rotation, rotation, Time.deltaTime * 5);
+    }
+
+    private void ReturnToOriginalPosition()
+    {
+        // Interpola la posición y rotación del NPC de vuelta a su estado original
+        NP.transform.position = Vector3.Lerp(NP.transform.position, originalPosition, Time.deltaTime * 2);
+        NP.transform.rotation = Quaternion.Slerp(NP.transform.rotation, originalRotation, Time.deltaTime * 2);
     }
 }

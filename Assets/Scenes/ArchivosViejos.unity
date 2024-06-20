@@ -2992,8 +2992,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dd25c3e8979d0444b730958d70521aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NP: {fileID: 7255318645770856284}
   inkJSON: {fileID: 4900000, guid: 729b2fd178c80814cb20ad7ed406fa12, type: 3}
   file: 0
+  shouldRotate: 0
 --- !u!65 &1332264319
 BoxCollider:
   m_ObjectHideFlags: 0

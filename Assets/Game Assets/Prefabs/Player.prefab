@@ -4001,7 +4001,6 @@ MonoBehaviour:
   _turnSpeed: 1000
   maleAnimator: {fileID: 1592824782342354624}
   femaleAnimator: {fileID: 1024654601275848753}
-  boss: {fileID: 6587161041915724646, guid: b68a9a8ab1d25424b82e686e2d15a635, type: 3}
 --- !u!54 &2897948093825430633
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4048,8 +4047,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2.304541, z: 1}
-  m_Center: {x: -5.1067722e-17, y: 0.09124857, z: 0}
+  m_Size: {x: 0.8293567, y: 2.241806, z: 0.43527684}
+  m_Center: {x: 0.0077655613, y: 0.12261605, z: 0.02410528}
 --- !u!114 &-2814200892063289403
 MonoBehaviour:
   m_ObjectHideFlags: 0

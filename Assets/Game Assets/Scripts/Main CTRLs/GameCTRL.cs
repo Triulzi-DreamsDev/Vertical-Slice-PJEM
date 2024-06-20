@@ -18,6 +18,7 @@ public class GameCTRL : MonoBehaviour
     public static int q = 0;
     public static bool SeFueJefe = false;
     public static bool Pasolvl1 = false;
+    public static bool TeHablanVoltea = false;
 
     // Start is called before the first frame update
     void Start()

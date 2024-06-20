@@ -17,6 +17,7 @@ public class PlayerController : GameCTRL
     Animator animator;
 
     Transform boss;
+    Transform PlayerTr;
 
     private void Start()
     {
@@ -36,7 +37,22 @@ public class PlayerController : GameCTRL
 
     private void Update()
     {
-        boss = GameObject.FindGameObjectWithTag("Player").transform;
+
+        GameObject bossObject = GameObject.FindGameObjectWithTag("Boss");
+
+        if (bossObject != null)
+        {
+            boss = bossObject.transform;
+        }
+        else
+        {
+            boss = null; // O cualquier otro valor que desees
+        }
+
+            if (TeHablanVoltea)
+        {
+            this.transform.LookAt(boss);
+        }
 
         if (DialogueManager.GetInstance().dialogueIsPlaying)
         {

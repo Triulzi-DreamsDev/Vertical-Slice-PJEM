@@ -41,6 +41,7 @@ public class EndOfGame : GameCTRL
 
         if (GameCTRL.questState == 3 && !yaFue)
         {
+            TeHablanVoltea = true;
             yaFue = true;
             StartCoroutine(PlayEndSequence());
         }

@@ -7,8 +7,9 @@ VAR haveFile = ""
     Ya tienes el archivo "Proyecto de Ley Crucial". #speaker:Librero 
 -> END
 - else:
-Oh, el archivo "Proyecto de Ley Crucial"...#speaker:Librero 
-¿Debería tomarlo?
+
+Aquí está disponible el archivo "Proyecto de Ley Crucial". #speaker:Librero 
+¿Deseas acceder a él?
 
     + [Sí]
         -> tomar

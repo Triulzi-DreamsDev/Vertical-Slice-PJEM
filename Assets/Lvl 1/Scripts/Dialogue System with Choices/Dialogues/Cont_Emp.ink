@@ -3,16 +3,15 @@ VAR haveFile = ""
 -> start
 === start ===
 {haveFile == "contratos":
-    "Ya tienes el archivo de contratos 'Contratos de empleados'." #speaker:Librero 
+    "Ya tienes el Registro de Pagos a Empleados 'Contratos de empleados'." #speaker:Librero 
     -> END
 - else:
-    "Contratos de empleados #speaker:Librero 
-    ¿es lo que estás buscando?" 
+    "Registro de Pagos a Empleados ¿es lo que estás buscando?" #speaker:Librero 
     + [Sí]
-        -> consultarContratos
+        -> consultarregistro
     + [No]
         -> END
 }
-=== consultarContratos ===
-"Contratos de empleados. Hay muchos documentos, pero no el que necesito..." #speaker:Librero
+=== consultarregistro ===
+"Los Registro de Pagos a Empleados. tiene muchos documentos, pero no el que buscas..." #speaker:Librero
 -> END

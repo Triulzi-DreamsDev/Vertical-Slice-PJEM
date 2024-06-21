@@ -9,13 +9,12 @@ VAR haveFile = ""
 
 -> END
 - else:
-"Archivos de Contaduría 2023, ¿deseas consultarlos?" #speaker:Librero 
+"Registros contables, ¿deseas consultarlos?" #speaker:Librero 
     + [Si]
         -> tomar_archivo
     + [No]
         -> END
 }
 === tomar_archivo ===
-    "Los libros de contaduría parecen interesantes... pero, no son el archivo crucial que estás buscando...
+    "Los Registros contables parecen interesantes... pero, no son el archivo crucial que estás buscando...
 -> END
-

@@ -9,7 +9,7 @@ VAR haveFile = ""
 
 -> END
 - else:
-"Archivo Recursos Humanos ¿es lo que estás buscando?" #speaker:Librero 
+"Archivo Recursos Humanos ¿Es lo que estás buscando?" #speaker:Librero 
     + [Si]
         -> tomar_archivo
     + [No]

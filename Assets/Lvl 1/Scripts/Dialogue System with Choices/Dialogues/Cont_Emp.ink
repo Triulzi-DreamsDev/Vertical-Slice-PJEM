@@ -14,5 +14,5 @@ VAR haveFile = ""
         -> END
 }
 === consultarContratos ===
-"Estás viendo los contratos de empleados. Parece que no es lo que necesitas..." #speaker:Librero
+"Contratos de empleados. Hay muchos documentos, pero no el que necesito..." #speaker:Librero
 -> END

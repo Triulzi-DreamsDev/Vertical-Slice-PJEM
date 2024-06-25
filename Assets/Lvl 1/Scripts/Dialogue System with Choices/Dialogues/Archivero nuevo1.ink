@@ -20,5 +20,5 @@ VAR haveFile = ""
 -> END
 
 === no_tomar_archivo ===
-Dejaste el Archivo "Recursos Humanos", Busca en otro librero. #speaker:Librero
+Dejaste el Archivo "Recursos Humanos", busca en otro librero. #speaker:Librero
 -> END

@@ -18,5 +18,5 @@ VAR haveFile = ""
  -> END
  
  === no_tomar_archivo ===
-Dejaste el Archivo "Contabilidad", Busca en otro librero. #speaker:Librero
+Dejaste el Archivo "Contabilidad", busca en otro librero. #speaker:Librero
 -> END

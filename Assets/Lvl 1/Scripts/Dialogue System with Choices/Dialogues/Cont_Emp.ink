@@ -18,5 +18,5 @@ VAR haveFile = ""
 "Los Registros de Pagos a Empleados tienen muchos documentos, pero no el que buscas..." #speaker:Librero
 -> END
  === no_tomar_archivo ===
-Dejaste el Archivo "Pago a Empleado", Busca en otro librero. #speaker:Librero
+Dejaste el Archivo "Pago a Empleado", busca en otro librero. #speaker:Librero
 -> END

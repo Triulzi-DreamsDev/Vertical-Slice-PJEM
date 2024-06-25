@@ -13,8 +13,12 @@ VAR haveFile = ""
     + [Sí]
         -> tomar_archivo
     + [No]
-        -> END
+        ->no_tomar_archivo
 }
 === tomar_archivo ===
     "Los Archivos de Recursos Humanos tienen muchos documentos, pero no está el que buscas."
+-> END
+
+=== no_tomar_archivo ===
+Dejaste el Archivo "Recursos Humanos", Busca en otro librero. #speaker:Librero
 -> END

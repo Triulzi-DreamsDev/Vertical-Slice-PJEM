@@ -13,8 +13,11 @@ VAR haveFile = ""
     + [Sí]
         -> tomar_archivo
     + [No]
-        -> END
+        -> no_tomar_archivo 
 }
 === tomar_archivo ===
     "Los Registros Contables parecen interesantes... pero no son el archivo crucial que estás buscando..."
+-> END
+ === no_tomar_archivo ===
+Dejaste el Archivo "Registros Contables", Busca en otro librero. #speaker:Librero
 -> END

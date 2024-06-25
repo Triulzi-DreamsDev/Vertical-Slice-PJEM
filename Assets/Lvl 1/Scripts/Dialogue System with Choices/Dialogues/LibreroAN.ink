@@ -25,5 +25,3 @@ Aquí se encuentra el Archivo "Proyecto de Ley Crucial",   ¿Deseas tomar? #spea
 No has tomado el Archivo "Proyecto de Ley Crucial".
 -> END
 
-
-

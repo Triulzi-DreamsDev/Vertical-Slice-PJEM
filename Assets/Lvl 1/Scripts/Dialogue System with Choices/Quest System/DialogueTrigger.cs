@@ -7,6 +7,7 @@ using UnityEngine;
 public class DialogueTrigger : GameCTRL
 {
     private GameObject player;
+    private GameObject bossTrigger;
     [SerializeField]
     private GameObject NP;
 
@@ -32,6 +33,7 @@ public class DialogueTrigger : GameCTRL
     {
         
         player = GameObject.FindGameObjectWithTag("Player");
+        bossTrigger = GameObject.FindGameObjectWithTag("BossTrigger");
 
         playerInRange = false;
 
@@ -101,11 +103,13 @@ public class DialogueTrigger : GameCTRL
         }
         else
         {
-            ReturnToOriginalPosition();
+            if (this.gameObject != bossTrigger)
+            {
+                ReturnToOriginalPosition();
+            }
         }
         if (SeFueJefe && cont == 0) {
-            playerInRange = false;
-            cont++;
+            visualCue.SetActive(false);
         }
     }
 

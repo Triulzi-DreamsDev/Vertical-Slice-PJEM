@@ -26,9 +26,11 @@ public class DialogueTrigger : GameCTRL
 
     private Vector3 originalPosition;
     private Quaternion originalRotation;
+    int cont = 0;
 
     private void Start()
     {
+        
         player = GameObject.FindGameObjectWithTag("Player");
 
         playerInRange = false;
@@ -100,6 +102,10 @@ public class DialogueTrigger : GameCTRL
         else
         {
             ReturnToOriginalPosition();
+        }
+        if (SeFueJefe && cont == 0) {
+            playerInRange = false;
+            cont++;
         }
     }
 

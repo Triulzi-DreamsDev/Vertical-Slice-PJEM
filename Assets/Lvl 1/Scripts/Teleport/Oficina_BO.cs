@@ -9,7 +9,6 @@ public class Oficina_BO : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
             SceneManager.LoadScene("Vertical Slice");
         }
     }

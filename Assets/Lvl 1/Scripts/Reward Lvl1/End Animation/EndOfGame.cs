@@ -74,9 +74,7 @@ public class EndOfGame : GameCTRL
 
     public void BtnMenu()
     {
-        rooms = 0;
-        TeHablanVoltea = false;
-        SceneManager.LoadScene("Vertical Slice");
+        SceneManager.LoadScene("Lobby");
     }
 
 

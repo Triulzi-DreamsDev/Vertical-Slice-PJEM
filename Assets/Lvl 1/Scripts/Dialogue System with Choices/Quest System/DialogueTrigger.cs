@@ -110,6 +110,7 @@ public class DialogueTrigger : GameCTRL
         }
         if (SeFueJefe && cont == 0) {
             visualCue.SetActive(false);
+            cont++;
         }
     }
 

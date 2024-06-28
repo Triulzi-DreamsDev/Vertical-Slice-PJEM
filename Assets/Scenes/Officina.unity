@@ -2175,7 +2175,7 @@ MonoBehaviour:
   officeQuest: 0
   goBackOffice: 0
   DestinationPuerta: {fileID: 0}
-  DestnationCajon: {fileID: 0}
+  DestnationCajon: {fileID: 711344013}
   cajon: 0
   distanciaDelPlayer: 2
   animator: {fileID: 9085729716149948404}
@@ -44525,6 +44525,7 @@ Transform:
   m_Children:
   - {fileID: 6033612700953956875}
   - {fileID: 4403643264725525661}
+  - {fileID: 711344013}
   m_Father: {fileID: 7097380742893442087}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &3622022486660862538

@@ -76,7 +76,7 @@ public class EndOfGame : GameCTRL
     {
         rooms = 0;
         TeHablanVoltea = false;
-        SceneManager.LoadScene("Vertical Slice");
+        SceneManager.LoadScene("Lobby");
     }
 
 

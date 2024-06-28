@@ -110,7 +110,7 @@ public class BossBehavior : GameCTRL
         {
             Vector3 targetVector = DestnationCajon.transform.position;
             transform.LookAt(new Vector3(-2.74f, 1.25f, 4.66f));
-            if (Vector3.Distance(transform.position, DestnationCajon.position) >= 2)
+            if (Vector3.Distance(transform.position, DestnationCajon.position) > 2)
             {
                 agent.SetDestination(targetVector);
 
@@ -119,7 +119,7 @@ public class BossBehavior : GameCTRL
                 animator.SetBool("angry", false);
                 animator.SetBool("pointing", false);
                 animator.SetBool("talking", false);
-            } else if (Vector3.Distance(transform.position, DestnationCajon.position) < 2)
+            } else if (Vector3.Distance(transform.position, DestnationCajon.position) <= 2)
             {
                 animator.SetBool("idle", false);
                 animator.SetBool("walking", false);

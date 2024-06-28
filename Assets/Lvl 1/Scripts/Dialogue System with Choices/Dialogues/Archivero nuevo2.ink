@@ -9,7 +9,7 @@ VAR haveFile = ""
 
 -> END
 - else:
-    "Registros Contables, ¿Deseas consultarlo?" #speaker:Librero
+    "Registros Contables, ¿Deseas tomarlo?" #speaker:Librero
     + [Sí]
         -> tomar_archivo
     + [No]

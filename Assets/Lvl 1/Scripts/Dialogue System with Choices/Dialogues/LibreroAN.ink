@@ -9,7 +9,7 @@ VAR haveFile = ""
 
 -> END
 - else:
-Aquí se encuentra el Archivo "Proyecto de Ley Crucial",   ¿Deseas tomar? #speaker:Librero 
+Aquí se encuentra el Archivo "Proyecto de Ley Crucial",   ¿Deseas tomarlo? #speaker:Librero 
     + [Si]
         -> tomar_archivo
     + [No]

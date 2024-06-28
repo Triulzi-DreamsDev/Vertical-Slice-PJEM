@@ -4,23 +4,24 @@ VAR haveFile = ""
 -> start
 
 === start ===
-{haveFile == true:
-    "Ya tienes el Archivo 'Proyecto de Ley Crucial'." #speaker:Librero
-    
+{haveFile== true:
+    Ya has tomado el Archivo "Proyecto de Ley Crucial". #speaker:Librero 
+
 -> END
 - else:
 Aquí se encuentra el Archivo "Proyecto de Ley Crucial",   ¿Deseas tomar? #speaker:Librero 
     + [Si]
-        -> tomar
+        -> tomar_archivo
     + [No]
-        -> no_tomar
+        -> no_tomar_archivo
 }
-=== tomar ===
+=== tomar_archivo ===
 #bool:true
     Ya has tomado el Archivo "Proyecto de Ley Crucial".
 -> END
 
-=== no_tomar ===
+=== no_tomar_archivo ===
 #bool:false
 No has tomado el Archivo "Proyecto de Ley Crucial".
 -> END
+

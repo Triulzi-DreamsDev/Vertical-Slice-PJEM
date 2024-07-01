@@ -109,7 +109,7 @@ public class BossBehavior : GameCTRL
         if ((questState == 2 || questState == 4) && cajon == false)
         {
             Vector3 targetVector = DestnationCajon.transform.position;
-            transform.LookAt(new Vector3(-2.74f, 1.25f, 4.66f));
+            transform.LookAt(targetVector);
             if (Vector3.Distance(transform.position, DestnationCajon.position) > 2)
             {
                 agent.SetDestination(targetVector);
